@@ -16,19 +16,18 @@ namespace myBTC
             try
             {
                 if (currencySelector.SelectedItem.ToString() != "USD" &&
-                    currencySelector.SelectedItem.ToString() != "EUR") ||
-                    currencySelector.SelectedItem == null
-                    )
-                {
-                    MessageBox.Show("Error", "VALUUTA ON VALIMATA");
-                }
+                    currencySelector.SelectedItem.ToString() != "EUR")||
+                    currencySelector.SelectedItem == null;
+
+            
+                    MessageBox.Show("Error", "VALUUTA ON VALIMATA");             
 
                 else if (currencySelector.SelectedItem.ToString() == "USD")
                 {
                     BitcoinRates newRate = BitcoinRates();
                     float result = (float)(float.Parse(bitcoinAmount.Text) *
                         newRate.Data.BTCUSD.VALUE);
-                    calculationresult.text = result.ToString();
+                        calculationresult.text = result.ToString();
                 }
 
                 else if (currencySelector.SelectedItem.ToString() == "EUR")
@@ -36,7 +35,7 @@ namespace myBTC
                     BitcoinRates newRate = BitcoinRates();
                     float result = (float)(float.Parse(bitcoinAmount.Text) *
                         newRate.Data.BTCUSD.VALUE);
-                    calculationresult.text = result.ToString();
+                        calculationresult.text = result.ToString();
                 }
             }
             catch (Exception ex)
